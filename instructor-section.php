@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>instructor_classes</title>
+    <title>Sections</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
-    <h1>instructor_classes</h1>
+    <h1>Sections</h1>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -35,8 +35,7 @@ if ($conn->connect_error) {
 }
 $iid = $_GET['id'];
 //echo $iid;
-$sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number 
-from section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id";
+$sql = "select section_id, section_number, i.instructor_name, c.prefix, c.number from section s join instructor i on i.instructor_id = s.instructor_id join course c on c.course_id = s.course_id where i.instructor_id=" . $iid;
 //echo $sql;
     $result = $conn->query($sql);
 
