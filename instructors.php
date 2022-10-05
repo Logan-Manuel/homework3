@@ -22,6 +22,7 @@ $username = "lmanuelo_homework3";
 $password = "Wrestlingman19";
 $dbname = "lmanuelo_homework3";
 
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
@@ -38,7 +39,7 @@ if ($result->num_rows > 0) {
 ?>
   <tr>
     <td><?=$row["instructor_id"]?></td>
-    <td><?=$row["instructor_name"]?></td>
+    <td><a href="instructor-section.php?id=<?=$row["instructor_id"]?>"><?=$row["instructor_name"]?></a></td>
   </tr>
 <?php
   }
@@ -51,4 +52,4 @@ $conn->close();
     </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
-</html> 
+</html>
